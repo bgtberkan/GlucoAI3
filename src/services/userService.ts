@@ -58,4 +58,40 @@ export const logoutUser = async () => {
   } catch (error) {
     throw error;
   }
+};
+
+// Doktorun hasta listesini getir (mock)
+export const getHealthcarePatients = async (doctorId: string) => {
+  // Gerçek uygulamada Firestore'dan çekilecek
+  // Şimdilik örnek veri
+  return [
+    { patientId: '1', patientName: 'Ahmet Yılmaz', patientEmail: 'ahmet@example.com' },
+    { patientId: '2', patientName: 'Ayşe Demir', patientEmail: 'ayse@example.com' },
+  ];
+};
+
+// Doktorun hasta listesinden hastayı sil (mock)
+export const removePatientFromHealthcare = async (doctorId: string, patientEmail: string) => {
+  // Gerçek uygulamada Firestore'dan silinecek
+  return true;
+};
+
+// Hastanın istatistiklerini getir (mock)
+export const getPatientStats = async (patientId: string) => {
+  // Gerçek uygulamada Firestore'dan çekilecek
+  return {
+    glucose: [
+      { value: 120 },
+      { value: 110 },
+      { value: 130 },
+    ],
+    insulin: [
+      { value: 8 },
+      { value: 10 },
+    ],
+    meals: [
+      { name: 'Kahvaltı' },
+      { name: 'Öğle Yemeği' },
+    ],
+  };
 }; 
